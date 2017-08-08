@@ -3,13 +3,14 @@ var router = express.Router();
 var mongodb = require('mongodb');
 var config = require('../config');
 var mLab = 'mongodb://' + config.db.host + '/' + config.db.name;
+// var mLab = 'mongodb://' + process.env.MONGO_HOST + '/' + process.env.MONGO_NAME;
 var MongoClient = mongodb.MongoClient;
 var shortid = require('shortid');
 var validUrl = require('valid-url');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'URL Shortener', host: req.get('host') });
 });
 
 /* GET url */

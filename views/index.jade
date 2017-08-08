@@ -2,4 +2,14 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Example usage as below:
+  code #{host}/new/http://www.google.com
+  p returns 
+  code
+    pre.
+      {
+          original_url: http://www.google.com,
+          short_url: '#{host}/rkHJWtvP-'
+      }
+      
+  p URL must be written as above, else an error will be returned.
